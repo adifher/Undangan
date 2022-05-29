@@ -1,4 +1,4 @@
-@media (max-width: 499px){
+@media (max-width: 399px) {
 ul#hitungmundur li span {
 	font-size: 35px;
 	font-weight: 500;
@@ -6,7 +6,13 @@ ul#hitungmundur li span {
 	padding: 2px 10px 24px 10px;
     background-color: #000000a9;
     border-radius: 6px;
-}}
+ }
+ul#hitungmundur li.separator {
+	font-size: 50px;
+	line-height: 25px;
+	vertical-align: top;
+	padding-top: 10px;
+}
 
 ul#hitungmundur {
 	list-style: none;
