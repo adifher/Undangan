@@ -395,15 +395,40 @@
                 Stay safe & jaga kesehatan ya :)
                 </p>
      
-              <a href="https://api.whatsapp.com/send?phone=#&text=Halo%20Annisa,%20saya%20akan%20datang%20di%20acara%20pernikahan&source=&data=" class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
-                <i class="fab fa-whatsapp"></i>
-                &nbsp;&nbsp;Kabari An'nisa
-              </a>
+               <div class="Form-Mantap" data-aos="fade-up" data-aos-easing="linear">
+                <form method="post" autocomplete="off" name="google-sheet">
+                  <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                      <input class="input" name="Name" type="text" placeholder="Nama">
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label">Kehadiran</label>
+                    <div class="field">
+                      <div class="select">
+                        <select name="Hadir">
+                          <option>Hadir</option>
+                          <option>Tidak Hadir</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                    <div class="field">
+                      <label class="label">Pesan</label>
+                      <div class="control">
+                        <input class="input" name="Pesan" type="text" placeholder="Pesan">
+                      </div>
+                    </div>
+
+                  <div class="field">
+                    <button class="button is-link" name="submit">Submit</button>
+                  </div>
+              </form>
+              </div>
               
-              <a href="https://api.whatsapp.com/send?phone=6285200750417&text=Halo%20Adhief,%20saya%20akan%20datang%20di%20acara%20pernikahan&source=&data=" class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
-                <i class="fab fa-whatsapp"></i>
-                &nbsp;&nbsp; Kabari Adhief
-              </a >
               <div class="space40px"></div>
               <div data-aos="fade-up" data-aos-easing="linear">
                 <img src="image/divider-leaves.png" class="divider has-text-centered" alt="~~~">
@@ -462,6 +487,17 @@
     <!-- End Footer -->
 
     <!-- Scripts -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyd-3rUzXInvChXERvZu0RJUPOwGB8wfALVZNfZifRst0F3coqL-Ljsrw7oE34_KQmu7g/exec'
+      const form = document.forms['google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => alert("Terima Kasih sudah konfirmasi... Kami tunggu dipernikahan kami :)"))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/menikah.js"></script>
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
